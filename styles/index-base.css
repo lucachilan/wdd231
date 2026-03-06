@@ -26,22 +26,18 @@ body {
     min-width: 320px;
 }
 
-header {
-    width: 100%;
-}
-
 h1,
 h2,
 .site-name span {
     font-family: var(--title-font);
     margin: 6px 0;
-
 }
 
 main {
     width: 95%;
+    max-width: 1200px;
     margin: 0 auto;
-    gap: 1rem;
+    padding-bottom: 2rem;
 }
 
 footer {
@@ -64,8 +60,8 @@ footer * {
 
 
 .social-media img {
-    height: 44px;
-    width: 44px;
+    height: auto;
+    width: 46px;
 }
 
 .time-footer {
