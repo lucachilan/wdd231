@@ -114,15 +114,15 @@ function displayCourses(courseList) {
             }
             saveCompletedCourses(completedCourses);
             displayCourses(courseList);
-            updateCredits();
+            updateCredits(courseList);
         })
         container.appendChild(card);
     });
 }
 
-function updateCredits() {
+function updateCredits(courseList) {
     let total = 0;
-    courses.forEach(course => {
+    courseList.forEach(course => {
         const id = `${course.subject}${course.number}`;
         if (completedCourses.includes(id)) {
             total += course.credits;
@@ -141,7 +141,7 @@ function filterCourses(type) {
         filteredCourses = courses.filter(course => course.subject === type);
     }
     displayCourses(filteredCourses);
-    updateCredits();
+    updateCredits(filteredCourses);
 }
 
 function clearButtons() {
@@ -167,4 +167,4 @@ filterButtons.forEach(button => {
 });
 
 displayCourses(courses);
-updateCredits();
+updateCredits(courses);

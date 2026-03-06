@@ -1,6 +1,6 @@
 @media (min-width:768px) {
     header {
-        grid-template-rows: 76px auto;
+        grid-template-rows: 100px auto;
     }
 
     .site-name {
