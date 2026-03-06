@@ -77,3 +77,94 @@ const courses = [
         completed: false
     }
 ]
+
+function loadCompletedCourses() {
+    const saved = localStorage.getItem("completedCourses");
+    return saved ? JSON.parse(saved) : [];
+}
+function saveCompletedCourses(list) {
+    localStorage.setItem("completedCourses", JSON.stringify(list));
+}
+
+let completedCourses = loadCompletedCourses();
+
+const container = document.querySelector("#course-container");
+const filterButtons = document.querySelectorAll(".filter-button");
+
+function displayCourses(courseList) {
+    container.innerHTML = "";
+    courseList.forEach(course => {
+        const card = document.createElement("div");
+        card.classList.add("course-card");
+
+        const courseID = `${course.subject}${course.number}`;
+
+        if (completedCourses.includes(courseID)) {
+            card.classList.add("completed");
+        }
+        card.innerHTML = `
+            <span>${course.subject} ${course.number}</span>
+            <p>${course.title}</p>
+        `;
+        card.addEventListener("click", () => {
+            if (!completedCourses.includes(courseID)) {
+                completedCourses.push(courseID);
+            } else {
+                completedCourses = completedCourses.filter(id => id !== courseID);
+            }
+            saveCompletedCourses(completedCourses);
+            displayCourses(courseList);
+            updateCredits();
+        })
+        container.appendChild(card);
+    });
+}
+
+function updateCredits() {
+    let total = 0;
+    courses.forEach(course => {
+        const id = `${course.subject}${course.number}`;
+        if (completedCourses.includes(id)) {
+            total += course.credits;
+        }
+    })
+
+    document.querySelector("#credits-completed").textContent = total;
+}
+
+function filterCourses(type) {
+
+    let filteredCourses;
+    if (type === "all") {
+        filteredCourses = courses;
+    } else {
+        filteredCourses = courses.filter(course => course.subject === type);
+    }
+    displayCourses(filteredCourses);
+    updateCredits();
+}
+
+function clearButtons() {
+    filterButtons.forEach(button => {
+        button.classList.remove("pressed");
+    });
+}
+
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        clearButtons();
+        button.classList.add("pressed");
+        if (button.id === "all-courses") {
+            filterCourses("all");
+        }
+        if (button.id === "wdd-courses") {
+            filterCourses("WDD");
+        }
+        if (button.id === "cse-courses") {
+            filterCourses("CSE");
+        }
+    });
+});
+
+displayCourses(courses);
+updateCredits();

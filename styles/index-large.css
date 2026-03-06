@@ -41,5 +41,14 @@
         grid-column: 1/3;
     }
 
+    #course-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .course-card {
+        width: 95%;
+    }
+
 
 }

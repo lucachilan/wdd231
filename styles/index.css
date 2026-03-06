@@ -30,6 +30,11 @@ header nav {
     grid-row: 2/3;
 }
 
+
+/* ------------------------------- 
+        sections in main
+   -------------------------------  */
+
 section h2 {
     background-color: var(--dark-color);
     padding: 6px;
@@ -55,4 +60,76 @@ section.content {
     margin: 0 auto;
     padding: 1rem;
     border-radius: 2rem;
+}
+
+
+/* ------------------------------- 
+        courses buttons
+   -------------------------------  */
+
+.course-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+button.filter-button {
+    margin: 1rem 0;
+    width: calc(100%/3 - 30px);
+    padding: 10px;
+    border: none;
+    border-radius: 2rem;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-size: 1.4rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+button.filter-button.pressed {
+    background-color: var(--second-background);
+    color: var(--dark-color);
+    outline: 2px solid var(--primary-color);
+}
+
+#course-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.course-card {
+    background-color: var(--light-color);
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 2rem;
+}
+
+.course-card.completed {
+    background-color: var(--nav-current);
+}
+
+.course-card.completed span,
+.course-card.completed p {
+    color: var(--light-color);
+}
+
+.course-card.completed p {
+    text-decoration: line-through;
+}
+
+.course-card.completed span::before {
+    content: "✓ ";
+    font-size: .8rem;
+}
+
+.credits-label {
+    text-align: center;
+    font-size: 1.3rem;
 }
