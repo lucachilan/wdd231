@@ -1,0 +1,44 @@
+@media (min-width:768px) {
+    header {
+        grid-template-rows: 76px auto;
+    }
+
+    .site-name {
+        background-color: var(--second-background);
+        grid-template-columns: 120px auto;
+
+    }
+
+    .site-name span {
+        color: var(--dark-color);
+        font-size: 60px;
+    }
+
+    .logo {
+        width: 76px;
+        height: auto;
+        margin: auto;
+    }
+
+    .logo * {
+        color: var(--dark-color);
+        fill: var(--dark-color);
+    }
+
+
+    .navigation li {
+        width: calc(100%/3);
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    main h1,
+    section.courses {
+        grid-column: 1/3;
+    }
+
+
+}

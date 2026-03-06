@@ -1,0 +1,57 @@
+header {
+    display: grid;
+    grid-template-rows: 50px auto;
+}
+
+.site-name {
+    background-color: var(--primary-color);
+    display: grid;
+    grid-template-columns: 50px auto 50px;
+}
+
+.site-name span {
+    color: var(--white-color);
+    font-size: 2rem;
+    margin: auto 0;
+}
+
+.logo {
+    width: 44px;
+    height: auto;
+    margin: auto;
+}
+
+.logo * {
+    color: var(--white-color);
+    fill: var(--white-color);
+}
+
+header nav {
+    grid-row: 2/3;
+}
+
+section h2 {
+    background-color: var(--dark-color);
+    padding: 6px;
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+section.content {
+    background-color: var(--second-background);
+    box-shadow: 5px 5px var(--light-color);
+}
+
+.about-me p {
+    padding: 1rem;
+    font-size: 1.3rem;
+}
+
+.photo img {
+    display: block;
+    height: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 2rem;
+}

@@ -1,0 +1,76 @@
+:root {
+    --primary-color: #065F46;
+    --secondary-color: #10B981;
+    --background-color: #F0FDF4;
+    --dark-color: #064E3B;
+    --light-color: #D1FAE5;
+    --white-color: #FFFFFF;
+    --black-color: #021002;
+
+    --second-background: #ECFDF5;
+    --nav-current: #064E3B;
+
+    --title-font: "Poppins", sans-serif;
+    --body-font: "Arimo", sans-serif;
+}
+
+* {
+    font-family: var(--body-font);
+    color: var(--black-color);
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+}
+
+header {
+    width: 100%;
+}
+
+h1,
+h2,
+.site-name span {
+    font-family: var(--title-font);
+    margin: 6px 0;
+
+}
+
+main {
+    width: 95%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+}
+
+footer * {
+    color: var(--white-color);
+}
+
+.social-media ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 1rem auto 6px;
+    justify-content: space-evenly;
+}
+
+
+.social-media img {
+    height: 44px;
+    width: 44px;
+}
+
+.time-footer {
+    background-color: var(--primary-color);
+    padding: 6px;
+    color: var(--white-color);
+    font-weight: 500;
+}
