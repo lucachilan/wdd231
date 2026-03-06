@@ -120,14 +120,16 @@ function displayCourses(courseList) {
     });
 }
 
-function updateCredits(courseList) {
-    let total = 0;
-    courseList.forEach(course => {
+function updateCredits(coursesList) {
+    const total = coursesList.reduce((sum, course) => {
         const id = `${course.subject}${course.number}`;
+
         if (completedCourses.includes(id)) {
-            total += course.credits;
+            return sum + course.credits;
         }
-    })
+
+        return sum;
+    }, 0);
 
     document.querySelector("#credits-completed").textContent = total;
 }
