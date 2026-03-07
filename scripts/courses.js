@@ -88,6 +88,14 @@ function saveCompletedCourses(list) {
 
 let completedCourses = loadCompletedCourses();
 
+if (completedCourses.length === 0) {
+    completedCourses = courses
+        .filter(course => course.completed)
+        .map(course => `${course.subject}${course.number}`);
+
+    saveCompletedCourses(completedCourses);
+}
+
 const container = document.querySelector("#course-container");
 const filterButtons = document.querySelectorAll(".filter-button");
 
