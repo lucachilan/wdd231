@@ -1,0 +1,45 @@
+/* 
+    Company cards
+*/
+
+p.info {
+    display: none;
+}
+
+#display-companies {
+    width: 95%;
+    max-width: 500px;
+    display: block;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.business-card {
+    width: 80%;
+    padding: 2rem;
+    background-color: var(--white-color);
+
+    text-align: center;
+}
+
+
+.business-card img {
+    display: block;
+    max-width: 200px;
+    max-height: 100px;
+    margin: 0 auto;
+}
+
+.business-card .infolist {
+    margin: 6px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.business-card a {
+    text-decoration: none;
+    color: var(--secondary-color);
+}

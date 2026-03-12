@@ -1,0 +1,63 @@
+:root {
+    --primary-color: #212e3e;
+    --secondary-color: #FFB829;
+    --background-color: #f4f4f4;
+    --dark-color: #1a2430;
+    --light-color: #009EED;
+    --white-color: #FFFFFF;
+    --black-color: #000000;
+
+    --second-background: #e8edf3;
+    --nav-current: var(--primary-color);
+
+    --title-font: "Poppins", sans-serif;
+    --body-font: "Arimo", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+.title-header,
+.navigation a {
+    font-family: var(--title-font);
+}
+
+header {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px 50px;
+    grid-template-rows: auto auto;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.title-header {
+    font-size: 1.2rem;
+}
+
+.nav-nav {
+    grid-column: 1/-1;
+    width: 100%;
+}
+
+header>* {
+    margin: auto 0;
+}
+
+body {
+    min-width: 320px;
+}
+
+.logo {
+    width: 100%;
+}
+
+/* 
+Random thing to use in the files
+*/
