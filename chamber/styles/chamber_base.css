@@ -35,6 +35,7 @@ header {
     grid-template-rows: 80px auto;
     background-color: var(--primary-color);
     color: var(--white-color);
+    overflow: hidden;
 }
 
 .title-header {
@@ -110,12 +111,51 @@ Random thing to use in the files
 */
 
 .dark-light {
-    --dark-light-color: var(--secondary-color);
     width: 44px;
     height: 44px;
     border-radius: 50%;
-    border: 4px solid var(--dark-light-color);
-    background: linear-gradient(to right, var(--dark-light-color) 50%, transparent 50%);
-
+    background: var(--secondary-color);
+    position: relative;
     cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.dark-light::before {
+    content: "";
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    top: 0;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 0.4s ease;
+    z-index: -1;
+}
+
+.dark-light::before {
+    transform: translateX(44px);
+}
+
+.dark-light:hover::before {
+    transform: translateX(12px);
+}
+
+.dark-light::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    border: 2px dashed var(--secondary-color);
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.dark-light:hover::after {
+    opacity: 0;
+}
+
+.dark-light:hover {
+    transform: rotate(20deg);
 }

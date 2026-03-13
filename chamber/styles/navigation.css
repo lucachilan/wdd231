@@ -68,6 +68,7 @@
     background: none;
     color: var(--secondary-color);
     cursor: pointer;
+    z-index: 999;
 }
 
 #menu::before {

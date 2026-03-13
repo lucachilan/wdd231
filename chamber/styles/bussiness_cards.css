@@ -9,7 +9,6 @@ p.info {
 #display-companies.grid-view {
     width: 95%;
     max-width: 500px;
-    display: block;
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
@@ -48,7 +47,6 @@ p.info {
 #display-companies.list-view {
     width: 95%;
     max-width: 900px;
-    display: block;
     margin: 1rem auto;
     display: flex;
     flex-direction: column;
