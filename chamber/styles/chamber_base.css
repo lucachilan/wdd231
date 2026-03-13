@@ -132,15 +132,11 @@ Random thing to use in the files
     transform: translateX(0);
     transition: transform 0.4s ease;
     z-index: -1;
-}
-
-.dark-light::before {
     transform: translateX(44px);
 }
 
-.dark-light:hover::before {
-    transform: translateX(12px);
-}
+
+
 
 .dark-light::after {
     content: "";
