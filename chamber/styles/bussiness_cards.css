@@ -6,7 +6,7 @@ p.info {
     display: none;
 }
 
-#display-companies {
+#display-companies.grid-view {
     width: 95%;
     max-width: 500px;
     display: block;
@@ -16,30 +16,94 @@ p.info {
     place-items: center;
 }
 
-.business-card {
+.business-card.grid-view {
     width: 80%;
     padding: 2rem;
     background-color: var(--white-color);
-
     text-align: center;
 }
 
 
-.business-card img {
+.business-card.grid-view img {
     display: block;
     max-width: 200px;
     max-height: 100px;
     margin: 0 auto;
 }
 
-.business-card .infolist {
+.business-card.grid-view .infolist {
     margin: 6px;
     padding: 5px;
     background-color: var(--primary-color);
+    border-radius: 6px;
     color: var(--white-color);
 }
 
-.business-card a {
+.business-card.grid-view a {
     text-decoration: none;
     color: var(--secondary-color);
+}
+
+/* list view */
+#display-companies.list-view {
+    width: 95%;
+    max-width: 900px;
+    display: block;
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.business-card.list-view {
+    width: 95%;
+    text-align: center;
+}
+
+.business-card.list-view:nth-child(even) {
+    background-color: var(--white-color);
+}
+
+.business-card.list-view:nth-child(odd) {
+    background-color: var(--second-background);
+}
+
+
+.business-card.list-view img {
+    display: none;
+}
+
+.business-card.list-view .infolist {
+    display: grid;
+    grid-template-columns: repeat(2, calc(95%/2));
+    grid-template-rows: repeat(2, 1fr);
+    padding: 10px;
+    color: var(--black-color);
+    place-items: center;
+}
+
+.business-card.list-view .infolist h2 {
+    grid-column: 1/-1;
+}
+
+.business-card.list-view a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    grid-column: 1/-1;
+}
+
+@media (min-width:550px) {
+    .business-card.list-view .infolist {
+        grid-template-columns: repeat(4, calc(95%/4));
+        grid-template-rows: 1fr;
+    }
+
+    .business-card.list-view .infolist h2 {
+        grid-column: 1;
+    }
+
+    .business-card.list-view a {
+        grid-column: -2;
+    }
 }

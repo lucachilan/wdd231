@@ -1,0 +1,17 @@
+@media (min-width:768px) {
+    #display-companies.grid-view {
+        max-width: 1200px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .business-card.grid-view {
+        width: 90%;
+        padding: 1rem;
+        background-color: var(--white-color);
+        text-align: center;
+        margin: auto 0 0;
+    }
+
+
+}

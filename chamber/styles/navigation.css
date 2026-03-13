@@ -1,44 +1,70 @@
 .navigation {
-    display: none;
+    display: flex;
     flex-direction: column;
+    background-color: var(--background-color);
     list-style: none;
     padding: 0;
     width: 100%;
+    margin: 0;
 }
 
 .navigation li {
-    text-align: center;
-    width: 100%;
-    background-color: var(--background-color);
+    display: block;
 }
-
-ul.navigation.open {
-    display: flex;
-}
-
-.navigation li a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-size: 1.5rem;
-}
-
 
 .navigation li.current {
     background-color: var(--nav-current);
 }
 
 .navigation li.current a {
-    color: var(--secondary-color);
+    color: var(--white-color);
 }
 
+.navigation a {
+    display: none;
+    position: relative;
+    color: var(--dark-color);
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    width: 100%;
+    padding: 10px 10px;
+    transition: color 0.5s ease;
+    z-index: 1;
+}
+
+.navigation a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+    z-index: -1;
+}
+
+.navigation a:hover {
+    color: var(--white-color);
+}
+
+.navigation a:hover::after {
+    width: 100%;
+}
+
+.navigation.open a {
+    display: block;
+}
 
 
 #menu {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
-    font-size: 2rem;
+    margin: auto 0;
+    font-size: 3.1rem;
     background: none;
     color: var(--secondary-color);
     cursor: pointer;
@@ -60,4 +86,5 @@ ul.navigation.open {
     #menu {
         display: none;
     }
+
 }
