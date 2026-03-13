@@ -117,7 +117,7 @@ Random thing to use in the files
     background: var(--secondary-color);
     position: relative;
     cursor: pointer;
-    transition: background 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .dark-light::before {
@@ -129,14 +129,9 @@ Random thing to use in the files
     background: var(--primary-color);
     top: 0;
     left: 0;
-    transform: translateX(0);
-    transition: transform 0.4s ease;
-    z-index: -1;
     transform: translateX(44px);
+    transition: transform 0.4s ease;
 }
-
-
-
 
 .dark-light::after {
     content: "";
@@ -146,6 +141,10 @@ Random thing to use in the files
     border: 2px dashed var(--secondary-color);
     opacity: 1;
     transition: opacity 0.3s;
+}
+
+.dark-light:hover::before {
+    transform: translateX(12px);
 }
 
 .dark-light:hover::after {
