@@ -91,6 +91,10 @@ p.info {
     grid-column: 1/-1;
 }
 
+.membership {
+    display: none;
+}
+
 @media (min-width:550px) {
     .business-card.list-view .infolist {
         grid-template-columns: repeat(4, calc(95%/4));

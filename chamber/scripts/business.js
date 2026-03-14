@@ -29,6 +29,8 @@ function displayCompanies(companies) {
         const phone = document.createElement("p");
         const info = document.createElement("p");
         info.classList.add("info")
+        const membership = document.createElement("p");
+        membership.classList.add("membership")
         const link = document.createElement("a");
         const infodiv = document.createElement("div");
         infodiv.classList.add("infolist");
@@ -37,6 +39,7 @@ function displayCompanies(companies) {
         address.textContent = member.address;
         phone.textContent = member.phone;
         info.textContent = member.information;
+        membership.textContent = `Membership level: ${member.membership_level}`;
 
         img.src = member.image_src;
         img.alt = `${member.name} logo`;
@@ -49,12 +52,12 @@ function displayCompanies(companies) {
 
         card.appendChild(img);
 
-
         infodiv.appendChild(name);
         infodiv.appendChild(address);
         infodiv.appendChild(phone);
         infodiv.appendChild(info);
         infodiv.appendChild(link);
+        infodiv.appendChild(membership);
         card.appendChild(infodiv);
         container.appendChild(card);
 
