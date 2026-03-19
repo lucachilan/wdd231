@@ -3,16 +3,6 @@ const url = "data/members.json"
 const gridButton = document.querySelector(".show-grid");
 const listButton = document.querySelector(".show-list");
 
-
-async function getMembers() {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    displayCompanies(data.members);
-}
-
-getMembers();
-
 function displayCompanies(companies) {
     const container = document.querySelector("#display-companies");
     gridButton.classList.add("toggled");
@@ -78,4 +68,11 @@ function displayCompanies(companies) {
             container.classList.add("list-view");
         });
     });
+}
+
+export async function getMembers() {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    displayCompanies(data.members);
 }
