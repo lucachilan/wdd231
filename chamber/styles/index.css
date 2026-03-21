@@ -29,8 +29,8 @@
 }
 
 .call-to-action-btn:hover {
-    background-color: var(--secondary-color);
-    box-shadow: 3px 3px var(--light-color);
+    background-color: var(--third-color);
+    box-shadow: 3px 3px var(--secondary-color);
 }
 
 /* .call-to-action-btn::after {
@@ -67,6 +67,7 @@
     border-radius: 6px;
     min-height: 300px;
     overflow: hidden;
+    box-shadow: 2px 2px var(--second-background);
 }
 
 .topics h2 {
@@ -133,6 +134,7 @@
     grid-template-columns: 150px 1fr;
     border-radius: 6px;
     overflow: hidden;
+    box-shadow: 2px 2px var(--second-background);
 }
 
 .card-spotlight img {

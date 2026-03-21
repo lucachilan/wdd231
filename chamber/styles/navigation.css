@@ -41,7 +41,7 @@
     height: 100%;
     top: 0;
     left: 0;
-    background: var(--secondary-color);
+    background: var(--third-color);
     transition: width 0.3s ease;
     z-index: -1;
 }
