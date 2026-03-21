@@ -16,9 +16,10 @@ function displayCompanies(companies) {
 
         const name = document.createElement("h2");
         name.textContent = member.name;
-        address.textContent = member.address;
 
         const address = document.createElement("p");
+        address.textContent = member.address;
+
 
         const phone = document.createElement("p");
         phone.textContent = member.phone;
@@ -118,8 +119,8 @@ function displayCompaniesSpotligt(companies) {
         img.alt = `${member.name} logo`;
         img.loading = "lazy";
 
-        const address = document.createElement("p");
-        address.innerHTML = `<b>ADDRESS:</b> ${member.address}`;
+        const addresss = document.createElement("p");
+        addresss.innerHTML = `<b>ADDRESS:</b> ${member.address}`;
 
         const phone = document.createElement("p");
         phone.innerHTML = `<b>PHONE:</b> ${member.phone}`;
@@ -134,7 +135,7 @@ function displayCompaniesSpotligt(companies) {
         cardSpotlight.appendChild(name);
         cardSpotlight.appendChild(tag);
         cardSpotlight.appendChild(img);
-        organizationdiv.appendChild(address);
+        organizationdiv.appendChild(addresss);
         organizationdiv.appendChild(phone);
         organizationdiv.appendChild(url);
         cardSpotlight.appendChild(organizationdiv);

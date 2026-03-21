@@ -1,4 +1,48 @@
-.topics {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+@media (min-width:768px) {
+    .topics {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .bussiness-spotlights {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .card-spotlight {
+        width: 30%;
+        grid-template-columns: 1fr;
+
+    }
+
+    .card-spotlight img {
+        max-width: 90%;
+        max-height: 120px;
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+    }
+
+    .card-spotlight .spotlight-info {
+        padding: .5rem 1.5rem;
+    }
+
+    .hero {
+        position: relative;
+    }
+
+    .call-to-action-btn a {
+        text-decoration: none;
+        color: var(--white-color);
+        font-size: 1.5rem;
+        font-weight: 900;
+    }
+
+    .call-to-action-btn {
+        background-color: var(--primary-color);
+        padding: 1rem;
+
+        right: 10%;
+        top: 70%;
+    }
 }

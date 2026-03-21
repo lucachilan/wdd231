@@ -2,7 +2,7 @@ const myKey = "e800d872d9a44405e8b7c45f6f5c0f4c";
 const myLat = "-30.90";
 const myLon = "-55.54";
 let units = "metric";
-const url = `//api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
 
 const weatherIcon = document.querySelector('#weather-icon');
 const currentTemp = document.querySelector('#current-temp');
@@ -46,7 +46,7 @@ function displayCurrent(data) {
 
 
 // now it is with forecast
-const forecasturl = `//api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
+const forecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
 const today = document.querySelector("#today");
 const tomorrow = document.querySelector("#tomorrow");
 const twoDays = document.querySelector("#twodays");
