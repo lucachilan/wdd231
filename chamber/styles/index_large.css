@@ -27,22 +27,13 @@
         padding: .5rem 1.5rem;
     }
 
-    .hero {
-        position: relative;
-    }
-
     .call-to-action-btn a {
-        text-decoration: none;
-        color: var(--white-color);
-        font-size: 1.5rem;
-        font-weight: 900;
+        font-size: 3rem;
     }
 
     .call-to-action-btn {
-        background-color: var(--primary-color);
-        padding: 1rem;
-
+        width: fit-content;
         right: 10%;
-        top: 70%;
+        top: 60%;
     }
 }

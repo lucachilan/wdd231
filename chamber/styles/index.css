@@ -1,5 +1,12 @@
+/* -------------- */
+/* hero           */
+/* -------------- */
 .hero {
     position: relative;
+}
+
+.hero img {
+    width: 100%;
 }
 
 .call-to-action-btn a {
@@ -17,12 +24,29 @@
     width: 8rem;
     right: calc(50% - 4rem);
     top: 40%;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
-.hero img {
-    width: 100%;
+.call-to-action-btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 3px 3px var(--light-color);
 }
 
+/* .call-to-action-btn::after {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 20px;
+    border: 4px dashed var(--secondary-color);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+} */
+
+
+/* .call-to-action-btn:hover::after {
+    opacity: 1;
+} */
 
 /* -------------- */
 /* body           */
@@ -73,6 +97,8 @@
 .weather-current img {
     grid-row: 2/8;
     margin: auto;
+    height: 100px;
+    width: auto;
 }
 
 .weather-current #current-temp {

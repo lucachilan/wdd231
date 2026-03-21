@@ -54,8 +54,13 @@
     </header>
     <main>
         <section class="hero">
-            <img src="images/rivera_large.webp" alt="" loading="lazy">
-            <div class="call-to-action-btn"><a href="join.html">Join us!</a></div>
+            <picture>
+                <source media="(min-width: 768px)" srcset="images/rivera_large.webp">
+                <img src="images/rivera_small.webp" alt="Rivera hero photo" loading="lazy" fetchpriority="high">
+            </picture>
+            <span class="call-to-action-btn">
+                <a href="join.html">Join us!</a>
+            </span>
         </section>
         <h1>Home</h1>
         <div class="topics">
@@ -64,7 +69,7 @@
             </section>
             <section class="weather-current">
                 <h2>Current Weather</h2>
-                <img id="weather-icon">
+                <img id="weather-icon" src="images/weather-waiting.svg" alt="weather">
                 <span class="weather-tag" id="current-temp"></span>
                 <span class="weather-tag" id="weather-description"></span>
                 <span class="weather-tag" id="high-temp"></span>
@@ -112,7 +117,7 @@
         </div>
         <div class="time-footer">
             <p>WDD231 Class Project</p>
-            <p>Luca Chilan</p>
+            <p><a href="../index.html">Luca Chilan</a></p>
             <p>©<span id="currentyear"></span> Rivera Chamber of Commerce</p>
             <p id="lastModified"></p>
         </div>
