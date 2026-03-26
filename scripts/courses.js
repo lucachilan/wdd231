@@ -98,6 +98,7 @@ if (completedCourses.length === 0) {
 
 const container = document.querySelector("#course-container");
 const filterButtons = document.querySelectorAll(".filter-button");
+const courseDetails = document.getElementById("course-details");
 
 function displayCourses(courseList) {
     container.innerHTML = "";
@@ -110,21 +111,48 @@ function displayCourses(courseList) {
         if (completedCourses.includes(courseID)) {
             card.classList.add("completed");
         }
+
         card.innerHTML = `
             <span>${course.subject} ${course.number}</span>
             <p>${course.title}</p>
         `;
+
         card.addEventListener("click", () => {
-            if (!completedCourses.includes(courseID)) {
-                completedCourses.push(courseID);
-            } else {
-                completedCourses = completedCourses.filter(id => id !== courseID);
-            }
-            saveCompletedCourses(completedCourses);
-            displayCourses(courseList);
-            updateCredits(courseList);
-        })
+            displayCourseDetails(course);
+        });
+
+        // Uncomment or update previous functionality if needed, but the user specifically asked for a dialog
+        // card.addEventListener("click", () => {
+        //     if (!completedCourses.includes(courseID)) {
+        //         completedCourses.push(courseID);
+        //     } else {
+        //         completedCourses = completedCourses.filter(id => id !== courseID);
+        //     }
+        //     saveCompletedCourses(completedCourses);
+        //     displayCourses(courseList);
+        //     updateCredits(courseList);
+        // })
+        // this block togles the completed course
         container.appendChild(card);
+    });
+}
+
+function displayCourseDetails(course) {
+    courseDetails.innerHTML = '';
+    courseDetails.innerHTML = `
+    <button id="close-modal">X</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+  `;
+    courseDetails.showModal();
+
+    const closeModal = document.getElementById("close-modal");
+    closeModal.addEventListener("click", () => {
+        courseDetails.close();
     });
 }
 
@@ -176,5 +204,8 @@ filterButtons.forEach(button => {
     });
 });
 
+
+
 displayCourses(courses);
 updateCredits(courses);
+

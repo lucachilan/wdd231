@@ -133,3 +133,47 @@ button.filter-button.pressed {
     text-align: center;
     font-size: 1.3rem;
 }
+
+/* ------------------------------- 
+             dialog
+   -------------------------------  */
+
+dialog {
+    border: none;
+    box-shadow: 5px 5px var(--light-color);
+    padding: 1rem;
+    background-color: var(--second-background);
+    width: 90%;
+    max-width: 600px;
+    margin: auto;
+}
+
+::backdrop {
+    background-color: var(--dialog-back);
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
+dialog button {
+    position: absolute;
+    top: 23px;
+    right: 23px;
+    font-size: 1.75rem;
+    padding: .5rem 1rem;
+    border: none;
+    background: none;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+dialog h2 {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+    padding: 6px 1rem;
+}
+
+dialog p {
+    margin-top: 1rem;
+}

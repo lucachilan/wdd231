@@ -1,13 +1,14 @@
 import { dateFooter } from './date.mjs';
-dateFooter();
-
 import { dislpayNavigation } from './navigation.mjs';
-dislpayNavigation();
-
-
-import { apiFetch, apiFetchForecast } from './weather.mjs';
-apiFetch()
-apiFetchForecast()
-
+import { apiFetch } from './weather.mjs';
 import { getMembersFiltered } from './business.mjs';
+
+dateFooter()
+
+dislpayNavigation()
+
+apiFetch("forecast")
+apiFetch("current")
+
+
 getMembersFiltered()

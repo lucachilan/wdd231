@@ -1,0 +1,5 @@
+I will create a flashcard app for vocabulary, using a public API from a dictionary to display new words that you can "learn" in here, It will bring some examples and pronunciation helps. 
+
+There´s going to be one page for the flashcards, one for the learned words and another one for practicing,
+
+The reason why I'm doing this is because I'm working as a language teacher and it could come in handy

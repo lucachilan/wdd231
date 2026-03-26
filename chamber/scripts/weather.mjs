@@ -3,6 +3,7 @@ const myLat = "-30.90";
 const myLon = "-55.54";
 let units = "metric";
 const url = `https://api.openweathermap.org/data/2.5/weather?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
+const forecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
 
 const weatherIcon = document.querySelector('#weather-icon');
 const currentTemp = document.querySelector('#current-temp');
@@ -13,16 +14,25 @@ const humidity = document.querySelector('#humidity');
 const sunrise = document.querySelector('#sunrise');
 const sunset = document.querySelector('#sunset');
 
-export async function apiFetch() {
+export async function apiFetch(type = "current") {
     try {
-        const response = await fetch(url);
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            displayCurrent(data);
-        } else {
+        const requestUrl = type === "forecast" ? forecasturl : url;
+
+        const response = await fetch(requestUrl);
+
+        if (!response.ok) {
             throw Error(await response.text());
         }
+
+        const data = await response.json();
+        console.log(data);
+
+        if (type === "forecast") {
+            displayForecast(data);
+        } else {
+            displayCurrent(data);
+        }
+
     } catch (error) {
         console.log(error);
     }
@@ -44,28 +54,25 @@ function displayCurrent(data) {
     weatherIcon.setAttribute('alt', data.weather[0].description);
 }
 
-
 // now it is with forecast
-const forecasturl = `https://api.openweathermap.org/data/2.5/forecast?lat=${myLat}&lon=${myLon}&units=${units}&appid=${myKey}`;
 const today = document.querySelector("#today");
 const tomorrow = document.querySelector("#tomorrow");
 const twoDays = document.querySelector("#twodays");
 
-
-export async function apiFetchForecast() {
-    try {
-        const response = await fetch(forecasturl);
-        if (response.ok) {
-            const data = await response.json();
-            console.log(data);
-            displayForecast(data);
-        } else {
-            throw Error(await response.text());
-        }
-    } catch (error) {
-        console.log(error);
-    }
-}
+// export async function apiFetchForecast() {
+//     try {
+//         const response = await fetch(forecasturl);
+//         if (response.ok) {
+//             const data = await response.json();
+//             console.log(data);
+//             displayForecast(data);
+//         } else {
+//             throw Error(await response.text());
+//         }
+//     } catch (error) {
+//         console.log(error);
+//     }
+// }
 
 const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 

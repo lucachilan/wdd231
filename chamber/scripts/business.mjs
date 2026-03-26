@@ -125,6 +125,10 @@ function displayCompaniesSpotligt(companies) {
         const phone = document.createElement("p");
         phone.innerHTML = `<b>PHONE:</b> ${member.phone}`;
 
+        const membership = document.createElement("p");
+        membership.classList.add("membership")
+        membership.textContent = `Membership level: ${member.membership_level}`;
+
         const url = document.createElement("p");
         let cleanURL = member.website_url.replace("https://www.", "");
         cleanURL = cleanURL.split("/")[0];
@@ -132,6 +136,8 @@ function displayCompaniesSpotligt(companies) {
         const organizationdiv = document.createElement("div");
         organizationdiv.classList.add("spotlight-info");
 
+
+        cardSpotlight.appendChild(membership);
         cardSpotlight.appendChild(name);
         cardSpotlight.appendChild(tag);
         cardSpotlight.appendChild(img);
