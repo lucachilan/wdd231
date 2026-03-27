@@ -1,0 +1,91 @@
+.join-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 720px;
+    margin: 0 auto 3rem;
+    gap: 1rem;
+    background-color: var(--background-color);
+    box-shadow: 2px 2px var(--second-background);
+    padding: 2rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+
+    h3 {
+        padding: 1rem 0 0;
+        border-bottom: 5px solid var(--second-background);
+    }
+}
+
+.join-form>* {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    height: 50px;
+    padding: 1rem;
+    font-size: 1.3rem;
+    border-radius: 6px;
+    background-color: var(--white-color);
+}
+
+textarea {
+    height: 100px;
+}
+
+label:has(input:required)::after {
+    content: 'required';
+    font-style: italic;
+    color: var(--red-color);
+    margin-left: 3rem;
+    font-weight: 600;
+}
+
+label:has(input:required:valid)::after {
+    color: var(--primary-color);
+    text-decoration: line-through;
+}
+
+input:required {
+    border-left: 10px solid var(--third-color);
+}
+
+input:focus:not(input[type="submit"]) {
+    border-left: 10px solid var(--secondary-color);
+}
+
+input:required:valid {
+    border-left: 10px solid var(--primary-color);
+}
+
+input[type="submit"] {
+    position: relative;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
+    height: 3rem;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    color: var(--white-color);
+    font-size: 1.5rem;
+    font-weight: 500;
+    border: none;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--third-color);
+    box-shadow: 3px 3px var(--secondary-color);
+}
+
+input[type="radio"] {
+    height: 20px;
+    width: 20px;
+}
+
+label:has(input[type="radio"]):not(label[class=father]) {
+    font-size: 1.3rem;
+}

@@ -43,44 +43,14 @@
             <ul class="navigation">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li class="current"><a href="join.html">Join</a></li>
+                <li></li><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1>Join</h1>
-        <form method="GET" action="thankyou.html" class="join-form">
-            <h3>About You</h3>
-            <label>First Name <input type="text" name="first" required autocomplete="given-name"
-                    title="Your First Name"></label>
-            <label>Last Name <input type="text" name="last" required autocomplete="family-name"
-                    title="Your Last Name"></label>
-            <label>Organizational Title <input type="text" name="organizational-title"
-                    autocomplete="organizational-title"
-                    title="Your Organizational Title, Only letters, hyphens, and spaces. Minimum 7 characters"
-                    pattern="[A-Za-z\- ]{7,}"></label>
-            <label>Email <input type="email" required name="email" title="email" autocomplete="email"
-                    placeholder="youremail@company.com"></label>
-            <label>Phone Number <input type="tel" required name="phone-number" title="Your Phone Number"
-                    autocomplete="tel"></label>
-            <h3>Business/Organization</h3>
-            <label>Business/Organization's name <input type="text" required name="org-name"
-                    title="Your business/organization's name" autocomplete="organization"></label>
-            <label class="father">Membership level
-                <label><input type="radio" name="membership" value="NP" checked> Non Profit Membership</label>
-                <label><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
-                <label><input type="radio" name="membership" value="silver"> Silver Membership</label>
-                <label><input type="radio" name="membership" value="gold"> Gold Membership</label>
-            </label>
-            <label>Business/Organization's Description <textarea name="org-desc"
-                    title="Your business/organization's description"></textarea></label>
-            <input type="hidden" name="timestap" id="timestamp" value="">
-            <label><input type="submit" value="Join our Chamber"></label>
-        </form>
-        <div class="member-modals">
-
-        </div>
+        <h1>Thank you for joining us</h1>
+        <div id="results"></div>
     </main>
     <footer>
         <div class="contact-info">
