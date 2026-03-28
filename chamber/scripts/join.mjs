@@ -24,22 +24,7 @@ learnMoreLinks.forEach(link => {
     });
 });
 
-// Intersection Observer for cards animation
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("animate");
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-const cards = document.querySelectorAll('.member-card');
-cards.forEach(card => observer.observe(card)); closeDialogs.forEach(button => {
+closeDialogs.forEach(button => {
     button.addEventListener("click", () => {
         button.closest("dialog").close();
     });
@@ -58,3 +43,19 @@ modals.forEach(modal => {
         }
     });
 });
+
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("animate");
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+const cards = document.querySelectorAll('.member-card');
+cards.forEach(card => observer.observe(card));
