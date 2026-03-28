@@ -39,7 +39,6 @@
 
     .dark-light::before {
         background: var(--background-color);
-        /* background: red; */
     }
 
 
