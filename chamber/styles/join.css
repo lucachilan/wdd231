@@ -1,4 +1,8 @@
-.join-form {
+/* 
+    form styling
+*/
+
+#join-form {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -7,6 +11,8 @@
     gap: 1rem;
     background-color: var(--background-color);
     box-shadow: 2px 2px var(--second-background);
+    border: 1px solid var(--second-background);
+
     padding: 2rem;
     border-radius: 6px;
     font-size: 1.1rem;
@@ -17,7 +23,7 @@
     }
 }
 
-.join-form>* {
+#join-form>* {
     display: flex;
     flex-direction: column;
 }
@@ -89,3 +95,100 @@ input[type="radio"] {
 label:has(input[type="radio"]):not(label[class=father]) {
     font-size: 1.3rem;
 }
+
+/* Cards */
+.member-modals {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 90%;
+    margin: 0 auto 3rem;
+}
+
+.member-card {
+    background-color: var(--background-color);
+    box-shadow: 2px 2px var(--second-background);
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-align: center;
+    border: 1px solid var(--second-background);
+}
+
+.member-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.learn-more {
+    display: inline-block;
+    color: var(--dark-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.learn-more:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+/* Dialog */
+.member-dialog {
+    padding: 2rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--background-color);
+    box-shadow: 2px 2px var(--second-background);
+    max-width: 500px;
+    margin: auto;
+}
+
+.member-dialog::backdrop {
+    background-color: var(--dialog-back);
+}
+
+.member-dialog h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.member-dialog p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 1.1rem;
+}
+
+.close-dialog {
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: block;
+    margin: 1.5rem auto 0;
+}
+
+.close-dialog:hover {
+    background-color: var(--third-color);
+}
+
+@media (min-width:768px) {
+    main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    h1 {
+        grid-column: 1/3;
+    }
+}
+
+
+/* 
+    animation for the cards
+*/

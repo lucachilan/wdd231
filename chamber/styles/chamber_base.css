@@ -11,6 +11,8 @@
 
     --second-background: #e8edf3;
     --nav-current: var(--primary-color);
+    --dialog-back: rgb(0 0 0/50%);
+
 
     --title-font: "Poppins", sans-serif;
     --body-font: "Arimo", sans-serif;

@@ -33,21 +33,6 @@
     box-shadow: 3px 3px var(--secondary-color);
 }
 
-/* .call-to-action-btn::after {
-    content: "";
-    position: absolute;
-    inset: -6px;
-    border-radius: 20px;
-    border: 4px dashed var(--secondary-color);
-    opacity: 0;
-    transition: opacity 0.5s ease;
-} */
-
-
-/* .call-to-action-btn:hover::after {
-    opacity: 1;
-} */
-
 /* -------------- */
 /* body           */
 /* -------------- */
@@ -68,6 +53,8 @@
     min-height: 300px;
     overflow: hidden;
     box-shadow: 2px 2px var(--second-background);
+    border: 1px solid var(--second-background);
+
 }
 
 .topics h2 {
@@ -76,7 +63,6 @@
     color: var(--white-color);
     grid-column: 1/-1;
 }
-
 
 /* -------------- */
 /* weather        */
@@ -114,8 +100,6 @@
     font-size: 1.3rem;
 }
 
-
-
 /* -------------- */
 /* spotlights     */
 /* -------------- */
@@ -135,6 +119,7 @@
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 2px 2px var(--second-background);
+    border: 1px solid var(--second-background);
 }
 
 .card-spotlight img {

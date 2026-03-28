@@ -50,7 +50,7 @@
     </header>
     <main>
         <h1>Join</h1>
-        <form method="GET" action="thankyou.html" class="join-form">
+        <form method="GET" action="thankyou.html" id="join-form">
             <h3>About You</h3>
             <label>First Name <input type="text" name="first" required autocomplete="given-name"
                     title="Your First Name"></label>
@@ -68,19 +68,63 @@
             <label>Business/Organization's name <input type="text" required name="org-name"
                     title="Your business/organization's name" autocomplete="organization"></label>
             <label class="father">Membership level
-                <label><input type="radio" name="membership" value="NP" checked> Non Profit Membership</label>
+                <label><input type="radio" name="membership" value="Non Profit" checked> Non Profit
+                    Membership</label>
                 <label><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
                 <label><input type="radio" name="membership" value="silver"> Silver Membership</label>
                 <label><input type="radio" name="membership" value="gold"> Gold Membership</label>
             </label>
             <label>Business/Organization's Description <textarea name="org-desc"
                     title="Your business/organization's description"></textarea></label>
-            <input type="hidden" name="timestap" id="timestamp" value="">
+            <input type="hidden" name="timestamp" id="timestamp" value="">
             <label><input type="submit" value="Join our Chamber"></label>
         </form>
         <div class="member-modals">
-
+            <section class="member-card">
+                <h2>Non Profit Membership Level</h2>
+                <a href="#" class="learn-more" data-modal="dialog-np">Learn more</a>
+            </section>
+            <section class="member-card">
+                <h2>Bronze Membership Level</h2>
+                <a href="#" class="learn-more" data-modal="dialog-bronze">Learn more</a>
+            </section>
+            <section class="member-card">
+                <h2>Silver Membership Level</h2>
+                <a href="#" class="learn-more" data-modal="dialog-silver">Learn more</a>
+            </section>
+            <section class="member-card">
+                <h2>Gold Membership Level</h2>
+                <a href="#" class="learn-more" data-modal="dialog-gold">Learn more</a>
+            </section>
         </div>
+
+        <dialog id="dialog-np" class="member-dialog">
+            <h2>Non Profit Membership Level</h2>
+            <p><strong>Cost:</strong> Free</p>
+            <p><strong>Benefits:</strong> Access to monthly networking events, inclusion in our online directory, and opportunities to volunteer at community events.</p>
+            <button class="close-dialog">Close</button>
+        </dialog>
+        
+        <dialog id="dialog-bronze" class="member-dialog">
+            <h2>Bronze Membership Level</h2>
+            <p><strong>Cost:</strong> $50 / year</p>
+            <p><strong>Benefits:</strong> All Non Profit benefits plus reduced rates for special training sessions, and access to members-only newsletter.</p>
+            <button class="close-dialog">Close</button>
+        </dialog>
+        
+        <dialog id="dialog-silver" class="member-dialog">
+            <h2>Silver Membership Level</h2>
+            <p><strong>Cost:</strong> $100 / year</p>
+            <p><strong>Benefits:</strong> All Bronze benefits plus event discounts, advertising in our monthly newsletter, and up to 2 spotlight positions per year.</p>
+            <button class="close-dialog">Close</button>
+        </dialog>
+        
+        <dialog id="dialog-gold" class="member-dialog">
+            <h2>Gold Membership Level</h2>
+            <p><strong>Cost:</strong> $250 / year</p>
+            <p><strong>Benefits:</strong> All Silver benefits plus VIP access to all special events, 5 spotlight positions per year on the home page, and full training packages.</p>
+            <button class="close-dialog">Close</button>
+        </dialog>
     </main>
     <footer>
         <div class="contact-info">
@@ -111,7 +155,7 @@
             </ul>
         </div>
         <div class="time-footer">
-            <p>WDD231 Class Project</p>
+            <p><a href="thankyou.html">a</a> WDD231 Class Project</p>
             <p><a href="../index.html">Luca Chilan</a></p>
             <p>©<span id="currentyear"></span> Rivera Chamber of Commerce</p>
             <p id="lastModified"></p>
