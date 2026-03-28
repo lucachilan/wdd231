@@ -51,7 +51,7 @@
     <main>
         <h1>Join</h1>
         <form method="GET" action="thankyou.html" id="join-form">
-            <h3>About You</h3>
+            <h2>About You</h2>
             <label>First Name <input type="text" name="first" required autocomplete="given-name"
                     title="Your First Name"></label>
             <label>Last Name <input type="text" name="last" required autocomplete="family-name"
@@ -63,16 +63,16 @@
                     placeholder="youremail@company.com"></label>
             <label>Phone Number <input type="tel" required name="phone-number" title="Your Phone Number"
                     autocomplete="tel"></label>
-            <h3>Business/Organization</h3>
+            <h2>Business/Organization</h2>
             <label>Business/Organization's name <input type="text" required name="org-name"
                     title="Your business/organization's name" autocomplete="organization"></label>
-            <label class="father">Membership level
-                <label><input type="radio" name="membership" value="Non Profit" checked> Non Profit
+            <div class="father">Membership level
+                <label><input type="radio" name="membership" value="np" checked> Non Profit
                     Membership</label>
                 <label><input type="radio" name="membership" value="bronze"> Bronze Membership</label>
                 <label><input type="radio" name="membership" value="silver"> Silver Membership</label>
                 <label><input type="radio" name="membership" value="gold"> Gold Membership</label>
-            </label>
+            </div>
             <label>Business/Organization's Description <textarea name="org-desc"
                     title="Your business/organization's description"></textarea></label>
             <input type="hidden" name="timestamp" id="timestamp" value="">

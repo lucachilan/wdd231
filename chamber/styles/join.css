@@ -18,7 +18,8 @@
     font-size: 1.1rem;
 }
 
-#join-form h3 {
+#join-form h2 {
+    font-size: 1.3rem;
     padding: 1rem 0 0;
     border-bottom: 5px solid var(--second-background);
 }
@@ -112,6 +113,9 @@ label:has(input[type="radio"]):not(label[class=father]) {
     border-radius: 6px;
     text-align: center;
     border: 1px solid var(--second-background);
+
+    opacity: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .member-card h2 {
@@ -204,10 +208,6 @@ label:has(input[type="radio"]):not(label[class=father]) {
     }
 }
 
-.member-card {
-    opacity: 0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
 
 .member-card.animate {
     animation: fadeInSlide 0.6s ease-out forwards;
