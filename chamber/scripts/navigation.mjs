@@ -11,7 +11,7 @@ export function dislpayNavigation() {
     });
 
     function checkScreen() {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 1024) {
             navigation.classList.add("open");
             headerText.classList.add("open");
         } else {

@@ -1,0 +1,74 @@
+.discover-card {
+    margin: 2rem auto;
+    width: 90%;
+    background-color: var(--background-color);
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 2px 2px var(--second-background);
+
+    display: grid;
+    grid-template-areas:
+        "name"
+        "img"
+        "desc"
+        "addr"
+        "btn";
+
+    h2 {
+        grid-area: name;
+        background-color: var(--primary-color);
+        color: var(--white-color);
+        padding: 1rem;
+        text-align: center;
+    }
+
+    figure {
+        grid-area: img;
+        margin: 10px auto;
+        width: 300px;
+    }
+
+    p {
+        grid-area: desc;
+        padding: 0.5rem 1rem;
+    }
+
+    address {
+        grid-area: addr;
+        padding: 0 1rem 1rem;
+    }
+
+    button {
+        grid-area: btn;
+        padding: 0.5rem;
+        margin: 0 auto 1rem;
+        width: 150px;
+        height: 50px;
+        cursor: pointer;
+        border: 2px solid var(--primary-color);
+        color: var(--dark-color);
+        border-radius: 6px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    button:hover {
+        background-color: var(--primary-color);
+        color: var(--white-color);
+    }
+
+
+}
+
+.visit-message {
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 90%;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 2rem;
+}

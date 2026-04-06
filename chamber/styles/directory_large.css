@@ -1,4 +1,4 @@
-@media (min-width:768px) {
+@media (min-width:64rem) {
     #display-companies.grid-view {
         max-width: 1200px;
         display: grid;

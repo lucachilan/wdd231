@@ -1,0 +1,26 @@
+@media (min-width:38rem) {
+    .discover-card {
+        grid-template-areas:
+            "name name"
+            "img desc"
+            "img addr"
+            "img btn";
+
+        /* h2 {
+            background-color: var(--background-color);
+            color: var(--primary-color);
+        } */
+
+        figure {
+            margin: 0;
+            height: 100%;
+        }
+
+        img {
+            width: 300px;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+}
