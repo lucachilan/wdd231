@@ -1,0 +1,115 @@
+:root {
+    /* LingoFlip Modern App Palette */
+    --primary-color: #4F46E5; /* Indigo */
+    --secondary-color: #06B6D4; /* Teal / Cyan */
+    --background-color: #F8FAFC; /* Light Slate / App Background */
+    --text-color: #1E293B; /* Dark Slate */
+    --accent-color: #F59E0B; /* Amber (Stars, highlights) */
+    --white: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 0.08); /* Softer shadow */
+    --border-color: rgba(0, 0, 0, 0.05);
+
+    --heading-font: 'Outfit', sans-serif;
+    --body-font: 'Inter', sans-serif;
+}
+
+/* Base Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--body-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--white);
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    font-style: italic;
+    opacity: 0.9;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background-color: var(--white);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px var(--shadow);
+    border-left: 5px solid var(--secondary-color);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Color Scheme Section */
+.color-palette {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.color-swatch {
+    flex: 1 1 150px;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 4px var(--shadow);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+.color-swatch p {
+    margin: 0.5rem 0;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 3rem;
+}
