@@ -20,6 +20,7 @@ let wordCollection = [];
 
 initializeLearnedPage();
 
+// initializes everythin, checking if the api is working
 async function initializeLearnedPage() {
     const savedWords = readLearnedWords();
     const starterWords = await readStarterWords();
@@ -44,6 +45,7 @@ async function readStarterWords() {
     }
 }
 
+// checks the learned words from local storage
 function readLearnedWords() {
     const savedWords = localStorage.getItem(LEARNED_WORDS_KEY);
 
@@ -59,6 +61,7 @@ function readLearnedWords() {
     }
 }
 
+// there's just one list, so it creates it
 function mergeWords(savedWords, starterWords) {
     const wordMap = new Map();
 

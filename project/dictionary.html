@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoFlip</title>
+    <title>LingoFlip | Search Result</title>
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
+
     <meta name="title" content="LingoFlip">
-    <meta name="description" content="Flashcard app for language learners, look for definitions, examples and more!">
+    <meta name="description" content="View the result of your searched word in LingoFlip.">
     <meta name="author" content="Luca Chilan">
 
-    <!-- Facebook Social Media Meta -->
-    <meta property="og:title" content="LingoFlip">
-    <meta property="og:description"
-        content="Flashcard app for language learners, look for definitions, examples and more!">
+    <!-- Open Graph -->
+    <meta property="og:title" content="LingoFlip | Search Result">
+    <meta property="og:description" content="View your searched word and continue learning.">
     <meta property="og:image" content="https://lucachilan.github.io/wdd231/project/flashcards-language.jpg">
-    <meta property="og:url" content="https://lucachilan.github.io/wdd231/project/index.html">
+    <meta property="og:url" content="https://lucachilan.github.io/wdd231/project/form-result.html">
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,10 +28,11 @@
     <link rel="stylesheet" href="styles/siteplan_large.css">
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/flashcards.css">
+
     <!-- scripts -->
     <script type="module" src="scripts/siteplan.mjs"></script>
+    <script type="module" src="scripts/form-result.js"></script>
     <script type="module" src="scripts/dictionary.js"></script>
-
 </head>
 
 <body>
@@ -45,45 +46,72 @@
         <span id="menu"></span>
         <nav class="nav-nav">
             <ul class="navigation">
-                <li class="current"><a href="index.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="practice.html">Practice</a></li>
                 <li><a href="learned.html">Learned Words</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="hero">
-            <picture>
-                <source media="(min-width: 64rem)" srcset="images/heroimg.webp">
-                <img src="images/herosmall.webp" alt="Rivera hero photo" loading="lazy" fetchpriority="high">
-            </picture>
-            <span class="cta-btn">
-                <a href="practice.html">Learn now!</a>
-            </span>
-        </section>
         <section class="quick-howthiswork">
             <div class="section-heading">
-                <p class="eyebrow">Daily vocabulary</p>
-                <h1>Learn one new word at a time</h1>
-                <p class="section-copy">Search for any English word and turn it into a study card with definition,
-                    pronunciation, and real usage examples.</p>
+                <p class="eyebrow">Search result</p>
+                <h1>Explore your word</h1>
+                <p class="section-copy">Your searched word is loaded below. You can continue exploring or search again.
+                </p>
             </div>
 
-            <form class="word-search" id="word-search" aria-label="Dictionary search form" action="dictionary.html"
-                method="get">
-                <label for="word-input">Choose a word to study</label>
+            <!-- 🔥 FORM (igual que index) -->
+            <form class="word-search" id="word-search" action="dictionary.html" method="get">
+                <label for="word-input">Search another word</label>
                 <div class="search-row">
-                    <input type="text" id="word-input" name="word" placeholder="Try 'curious' or 'journey'"
-                        autocomplete="off" required>
-                    <button type="submit">Search word</button>
+                    <input type="text" id="word-input" name="word" placeholder="Try 'curious' or 'journey'" required>
+                    <button type="submit">Search</button>
                 </div>
             </form>
+
+            <div class="quick-actions">
+                <button type="button" class="secondary-btn" id="random-word">Show another word</button>
+                <p id="status-message" class="status-message" aria-live="polite"></p>
+            </div>
+
+            <!-- 🔥 FLASHCARD COMPLETA -->
+            <article class="flashcard" id="flashcard">
+                <div class="flashcard__header">
+                    <div>
+                        <p class="flashcard__label">Word</p>
+                        <h2 id="word-title">Loading...</h2>
+                    </div>
+                </div>
+
+                <div class="flashcard__content">
+                    <section>
+                        <h3>Definition</h3>
+                        <p id="word-definition"></p>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <p id="word-example"></p>
+                    </section>
+                    <section>
+                        <h3>Part of speech</h3>
+                        <p id="word-part-of-speech"></p>
+                    </section>
+                    <section>
+                        <h3>Pronunciation</h3>
+                        <a id="word-audio" href="#" target="_blank">Audio</a>
+                    </section>
+                </div>
+
+                <button type="button" class="learn-btn" id="save-word">Mark as learned</button>
+            </article>
         </section>
     </main>
-    <footer>
-        <div class="contact-info">
 
-        </div>
+    <footer>
+        <div class="contact-info"></div>
+
         <div class="social-media">
             <ul>
                 <li>
@@ -99,11 +127,12 @@
                 <li>
                     <a href="https://music.youtube.com/playlist?list=PLWrsKuuB7ZOSwpN36gSUgm8ZIGr55mtG3&si=K99rv1oWMCWLGLOP"
                         target="_blank">
-                        <img src="images/youtubemusic-logo.svg" alt="Youtube Music, best playlist">
+                        <img src="images/youtubemusic-logo.svg" alt="Youtube Music">
                     </a>
                 </li>
             </ul>
         </div>
+
         <div class="time-footer">
             <p>WDD231 Class Project</p>
             <p><a href="../index.html">Luca Chilan</a></p>

@@ -233,3 +233,12 @@ Navigation
 #menu.open::before {
     content: "✖";
 }
+
+
+
+/*  video  */
+
+.video a {
+    font-weight: 600;
+    text-decoration: none;
+}
