@@ -25,8 +25,11 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/siteplan.css">
     <link rel="stylesheet" href="styles/siteplan_large.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/flashcards.css">
     <!-- scripts -->
     <script type="module" src="scripts/siteplan.mjs"></script>
+    <script type="module" src="scripts/dictionary.js"></script>
 
 </head>
 
@@ -41,15 +44,75 @@
         <span id="menu"></span>
         <nav class="nav-nav">
             <ul class="navigation">
-                <li class="current"><a href="index.html">Flashcards</a></li>
+                <li class="current"><a href="index.html">Home</a></li>
                 <li><a href="practice.html">Practice</a></li>
                 <li><a href="learned.html">Learned Words</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section class="hero">
+            <picture>
+                <source media="(min-width: 64rem)" srcset="images/heroimg.webp">
+                <img src="images/herosmall.webp" alt="Rivera hero photo" loading="lazy" fetchpriority="high">
+            </picture>
+            <span class="cta-btn">
+                <a href="practice.html">Learn now!</a>
+            </span>
+        </section>
+        <section class="quick-howthiswork">
+            <div class="section-heading">
+                <p class="eyebrow">Daily vocabulary</p>
+                <h1>Learn one new word at a time</h1>
+                <p class="section-copy">Search for any English word and turn it into a study card with definition,
+                    pronunciation, and real usage examples.</p>
+            </div>
 
+            <form class="word-search" id="word-search" aria-label="Dictionary search form">
+                <label for="word-input">Choose a word to study</label>
+                <div class="search-row">
+                    <input type="text" id="word-input" name="word" placeholder="Try 'curious' or 'journey'"
+                        autocomplete="off" required>
+                    <button type="submit">Search word</button>
+                </div>
+            </form>
 
+            <div class="quick-actions">
+                <button type="button" class="secondary-btn" id="random-word">Show another word</button>
+                <p id="status-message" class="status-message" aria-live="polite"></p>
+            </div>
+
+            <article class="flashcard" id="flashcard" aria-live="polite">
+                <div class="flashcard__header">
+                    <div>
+                        <p class="flashcard__label">Word</p>
+                        <h2 id="word-title">Loading...</h2>
+                    </div>
+                </div>
+
+                <div class="flashcard__content">
+                    <section>
+                        <h3>Definition</h3>
+                        <p id="word-definition">We are preparing your next vocabulary card.</p>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <p id="word-example">Checking with the dictionary...</p>
+                    </section>
+                    <section>
+                        <h3>Part of speech</h3>
+                        <p id="word-part-of-speech">-</p>
+                    </section>
+                    <section>
+                        <h3>Pronunciation help</h3>
+                        <a id="word-audio" class="audio-link" href="#" target="_blank" rel="noopener noreferrer">Audio
+                            not available</a>
+                    </section>
+                </div>
+
+                <button type="button" class="learn-btn" id="save-word">Mark as learned</button>
+            </article>
+        </section>
     </main>
     <footer>
         <div class="contact-info">

@@ -1,0 +1,78 @@
+.hero {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.cta-btn>a {
+    position: absolute;
+    display: block;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--white-color);
+    text-decoration: none;
+    background-color: var(--button-color);
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    text-align: center;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 4px 6px var(--shadow);
+}
+
+.cta-btn a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: -1;
+}
+
+.cta-btn a:hover::before {
+    transform: translateX(0);
+}
+
+.cta-btn a:hover {
+    color: var(--white-color);
+}
+
+/* content section */
+.quick-howthiswork {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.section-heading h1,
+.flashcard h2,
+.flashcard h3 {
+    color: var(--text-color);
+}
+
+.eyebrow {
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.section-copy {
+    margin-bottom: 0;
+    max-width: 60ch;
+}

@@ -25,8 +25,10 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/siteplan.css">
     <link rel="stylesheet" href="styles/siteplan_large.css">
+    <link rel="stylesheet" href="styles/practice.css">
     <!-- scripts -->
     <script type="module" src="scripts/siteplan.mjs"></script>
+    <script type="module" src="scripts/practice.js"></script>
 
 </head>
 
@@ -41,20 +43,90 @@
         <span id="menu"></span>
         <nav class="nav-nav">
             <ul class="navigation">
-                <li><a href="index.html">Flashcards</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li class="current"><a href="practice.html">Practice</a></li>
                 <li><a href="learned.html">Learned Words</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section class="practice-layout">
+            <div class="practice-intro">
+                <p class="practice-section-label">Practice mode</p>
+                <h1>Keep the words moving</h1>
+                <p>Each round shows a random word from your study pool. The page shuffles the full list and avoids repeating a word until the current round is exhausted, so the practice feels fresh instead of cycling through the same few cards.</p>
+            </div>
 
+            <section class="practice-progress">
+                <h2>Session progress</h2>
+                <div class="progress-grid">
+                    <article class="progress-pill">
+                        <p class="progress-label">Words answered</p>
+                        <p id="current-count">0</p>
+                    </article>
+                    <article class="progress-pill">
+                        <p class="progress-label">Correct</p>
+                        <p id="correct-count">0</p>
+                    </article>
+                    <article class="progress-pill">
+                        <p class="progress-label">Still in this round</p>
+                        <p id="remaining-count">0</p>
+                    </article>
+                </div>
+            </section>
 
+            <article class="practice-card">
+                <div class="practice-card__header">
+                    <div>
+                        <p class="practice-word-label">Current word</p>
+                        <h2 id="practice-word">Loading...</h2>
+                    </div>
+                </div>
+
+                <div class="practice-prompt">
+                    <p class="practice-section-label">Try first</p>
+                    <p>Say the meaning out loud, use the word in a sentence, and then reveal the answer to check yourself.</p>
+                </div>
+
+                <div class="practice-actions">
+                    <button type="button" class="practice-button primary" id="reveal-answer">Reveal answer</button>
+                    <button type="button" class="practice-button secondary" id="next-word">Skip to another word</button>
+                </div>
+
+                <p class="practice-status" id="practice-status" aria-live="polite"></p>
+
+                <div class="practice-answer" id="practice-answer" hidden>
+                    <section>
+                        <h3>Definition</h3>
+                        <p id="practice-definition"></p>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <p id="practice-example"></p>
+                    </section>
+                    <section>
+                        <h3>Part of speech</h3>
+                        <p id="practice-part-of-speech"></p>
+                    </section>
+                    <section>
+                        <h3>Pronunciation help</h3>
+                        <a id="practice-audio" href="#" target="_blank" rel="noopener noreferrer">Audio not available</a>
+                    </section>
+                </div>
+
+                <div class="answer-actions">
+                    <button type="button" class="practice-button success" id="mark-correct">I knew it</button>
+                    <button type="button" class="practice-button warning" id="mark-review">Need more review</button>
+                </div>
+            </article>
+
+            <section class="practice-history">
+                <h2>Recent answers</h2>
+                <ul class="practice-history-list" id="practice-history"></ul>
+            </section>
+        </section>
     </main>
     <footer>
-        <div class="contact-info">
-
-        </div>
         <div class="social-media">
             <ul>
                 <li>

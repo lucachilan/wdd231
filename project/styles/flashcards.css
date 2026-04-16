@@ -1,0 +1,130 @@
+/* Word search */
+
+.word-search label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.search-row {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.word-search input,
+.word-search button,
+.secondary-btn,
+.learn-btn {
+    border-radius: 12px;
+    font: inherit;
+}
+
+.word-search input {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border: 1px solid var(--border-color);
+}
+
+.word-search button,
+.secondary-btn,
+.learn-btn {
+    border: none;
+    cursor: pointer;
+    padding: 0.9rem 1.2rem;
+    font-weight: 600;
+}
+
+.word-search button,
+.learn-btn {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.secondary-btn {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.quick-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.status-message {
+    margin: 0;
+    min-height: 1.5rem;
+    color: var(--button-color);
+    font-weight: 500;
+}
+
+/* Flashcard starting here */
+
+.flashcard {
+    display: grid;
+    gap: 1.25rem;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, var(--white-color) 0%, var(--background-color) 100%);
+    box-shadow: 0 18px 40px var(--shadow);
+}
+
+.flashcard__header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.flashcard__label {
+    margin: 0;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.85rem;
+}
+
+.flashcard__header h2 {
+    margin: 0.2rem 0 0;
+    font-size: clamp(2rem, 6vw, 3rem);
+}
+
+.flashcard__content {
+    display: grid;
+    gap: 1rem;
+}
+
+.flashcard__content section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    border-radius: 14px;
+    border-left-width: 4px;
+}
+
+.flashcard__content h3 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+.flashcard__content p {
+    margin: 0;
+}
+
+.audio-link {
+    font-weight: 600;
+}
+
+@media (min-width: 40rem) {
+    .search-row {
+        grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .flashcard__content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}

@@ -4,15 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LingoFlip</title>
+    <title>LingoFlip | Learned Words</title>
     <link rel="icon" href="images/icon.ico" type="image/x-icon">
     <meta name="title" content="LingoFlip">
-    <meta name="description" content="Flashcard app for language learners">
+    <meta name="description" content="Review saved vocabulary words, starter vocabulary, and pronunciation help in the LingoFlip learned words page.">
     <meta name="author" content="Luca Chilan">
 
     <!-- Facebook Social Media Meta -->
-    <meta property="og:title" content="LingoFlip">
-    <meta property="og:description" content="Flashcard app for language learners">
+    <meta property="og:title" content="LingoFlip | Learned Words">
+    <meta property="og:description" content="Review saved vocabulary words, examples, and pronunciation support.">
     <meta property="og:image" content="https://lucachilan.github.io/wdd231/project/flashcards-language.jpg">
     <meta property="og:url" content="https://lucachilan.github.io/wdd231/project/index.html">
 
@@ -25,8 +25,10 @@
     <!-- styles -->
     <link rel="stylesheet" href="styles/siteplan.css">
     <link rel="stylesheet" href="styles/siteplan_large.css">
+    <link rel="stylesheet" href="styles/learned.css">
     <!-- scripts -->
     <script type="module" src="scripts/siteplan.mjs"></script>
+    <script type="module" src="scripts/learned.js"></script>
 
 </head>
 
@@ -41,15 +43,81 @@
         <span id="menu"></span>
         <nav class="nav-nav">
             <ul class="navigation">
-                <li><a href="index.html">Flashcards</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="practice.html">Practice</a></li>
                 <li class="current"><a href="learned.html">Learned Words</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <section class="learned-layout">
+            <div class="learned-intro">
+                <p class="section-label">Review space</p>
+                <h1>Track the words you are keeping</h1>
+                <p>This page combines the words you marked as learned with a starter review collection. That gives you a fuller study board and helps the site meet the goal of showing rich vocabulary content with definitions, examples, and pronunciation support.</p>
+            </div>
 
+            <section class="learned-stats">
+                <h2>Word overview</h2>
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <p class="stat-label">Total words on page</p>
+                        <p class="stat-value" id="total-words">0</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-label">Saved as learned</p>
+                        <p class="stat-value" id="learned-words">0</p>
+                    </article>
+                    <article class="stat-card">
+                        <p class="stat-label">Starter collection</p>
+                        <p class="stat-value" id="starter-words">0</p>
+                    </article>
+                </div>
+            </section>
 
+            <section class="word-board">
+                <div class="board-header">
+                    <h2>Vocabulary board</h2>
+                    <p class="board-message" id="board-message" aria-live="polite"></p>
+                </div>
+                <div class="word-grid" id="word-grid"></div>
+            </section>
+        </section>
+
+        <dialog class="word-detail-dialog" id="word-detail-dialog" aria-labelledby="dialog-word">
+            <div class="dialog-content">
+                <div class="dialog-header">
+                    <div>
+                        <p class="section-label">Word detail</p>
+                        <h2 id="dialog-word">Word</h2>
+                    </div>
+                    <button type="button" class="word-button secondary" id="close-dialog">Close</button>
+                </div>
+
+                <div class="dialog-sections">
+                    <section>
+                        <h3>Definition</h3>
+                        <p id="dialog-definition"></p>
+                    </section>
+                    <section>
+                        <h3>Example</h3>
+                        <p id="dialog-example"></p>
+                    </section>
+                    <section>
+                        <h3>Part of speech</h3>
+                        <p id="dialog-part-of-speech"></p>
+                    </section>
+                    <section>
+                        <h3>Pronunciation help</h3>
+                        <a id="dialog-audio" href="#" target="_blank" rel="noopener noreferrer">Audio not available</a>
+                    </section>
+                </div>
+
+                <div class="dialog-actions">
+                    <button type="button" class="word-button primary" id="close-dialog-footer">Done</button>
+                </div>
+            </div>
+        </dialog>
     </main>
     <footer>
         <div class="contact-info">

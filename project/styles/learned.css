@@ -1,0 +1,202 @@
+.learned-layout {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.learned-intro h1,
+.learned-stats h2,
+.word-board h2,
+.word-card h3,
+.word-detail-dialog h2,
+.word-detail-dialog h3 {
+    color: var(--text-color);
+}
+
+.section-label {
+    margin: 0;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.learned-intro p:last-child {
+    max-width: 68ch;
+}
+
+.stats-grid,
+.word-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.stat-card,
+.word-card {
+    background: linear-gradient(180deg, var(--white-color) 0%, var(--background-color) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 10px 24px var(--shadow);
+}
+
+.stat-card {
+    padding: 1rem;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.stat-card p {
+    margin: 0;
+}
+
+.stat-label {
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.9rem;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.board-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+}
+
+.board-message {
+    margin: 0;
+    min-height: 1.5rem;
+    color: var(--button-color);
+    font-weight: 500;
+}
+
+.word-card {
+    padding: 1.2rem;
+    display: grid;
+    gap: 0.9rem;
+}
+
+.word-card h3 {
+    margin: 0;
+}
+
+.word-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.meta-pill {
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+.word-card p {
+    margin: 0;
+}
+
+.word-card__label {
+    color: var(--text-color);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.word-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.word-button {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 0.85rem 1rem;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.word-button.primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-color: var(--primary-color);
+}
+
+.word-button.secondary {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.word-detail-dialog {
+    width: min(38rem, calc(100vw - 2rem));
+    border: none;
+    border-radius: 18px;
+    padding: 0;
+    box-shadow: 0 24px 48px var(--shadow);
+}
+
+.word-detail-dialog::backdrop {
+    background: rgba(30, 41, 59, 0.55);
+}
+
+.dialog-content {
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: start;
+}
+
+.dialog-header h2,
+.dialog-header p {
+    margin: 0;
+}
+
+.dialog-sections {
+    display: grid;
+    gap: 1rem;
+}
+
+.dialog-sections section {
+    width: auto;
+    margin: 0;
+    padding: 1rem;
+    background-color: var(--background-color);
+    border-radius: 14px;
+    border-left: 4px solid var(--secondary-color);
+}
+
+.dialog-sections p {
+    margin: 0;
+}
+
+.dialog-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+@media (min-width: 48rem) {
+    .stats-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .word-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
